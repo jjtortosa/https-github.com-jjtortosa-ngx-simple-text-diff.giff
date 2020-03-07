@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ngx-simple-text-diff",
+    "build": "ng build --prod ngx-simple-text-diff",
     "build:demo": "ng build ngx-simple-text-diff-showcase --base-href='https://jjtortosa.github.io/ngx-simple-text-diff/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish:demo": "npx angular-cli-ghpages --dir=./dist/ngx-simple-text-diff-showcase"
+    "publish:demo": "npx angular-cli-ghpages --dir=./dist/ngx-simple-text-diff-showcase",
+    "publish": "npm publish dist/ngx-simple-text-diff"
   },
   "private": true,
   "dependencies": {
