@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ngx-simple-text-diff": {
@@ -70,7 +70,7 @@
             "styles": [
               "projects/ngx-simple-text-diff-showcase/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/diff/dist/diff.min.js"]
           },
           "configurations": {
             "production": {
@@ -134,7 +134,7 @@
             "styles": [
               "projects/ngx-simple-text-diff-showcase/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/diff/dist/diff.min.js"]
           }
         },
         "lint": {

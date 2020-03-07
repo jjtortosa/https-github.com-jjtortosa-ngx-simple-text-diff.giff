@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 
 declare const Diff: {
   diffWordsWithSpace: (oldText: string, newText: string, options?: any) => any[];
@@ -26,7 +26,7 @@ declare const Diff: {
 
   `]
 })
-export class NgxSimpleTextDiffComponent implements OnInit {
+export class NgxSimpleTextDiffComponent implements OnChanges {
 
 
   @Input() oldText: string;
@@ -36,7 +36,7 @@ export class NgxSimpleTextDiffComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.diff = Diff.diffWordsWithSpace(
       this.oldText.replace(/\n/, '↵\n'),
       this.newText.replace(/\n/, '↵\n')

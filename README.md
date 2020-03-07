@@ -10,7 +10,17 @@ Angular 2+ implementation of the diff library for displaying diffs of text.
 npm i ngx-simple-text-diff
 ``` 
 
-2. Import `NgxDiffModule` to your app:
+2. Include the diff.js script
+
+ in angular.json:
+```
+...
+	"scripts": ["./node_modules/diff/dist/diff.min.js"]
+...
+```
+
+
+3. Import `NgxDiffModule` to your app:
     ```
     import { BrowserModule } from '@angular/platform-browser';
     import { NgModule } from '@angular/core';
@@ -35,5 +45,6 @@ npm i ngx-simple-text-diff
     <lib-ngx-simple-text-diff [oldText]="oldDocumentContents" [newText]="newDocumentContents"></lib-ngx-simple-text-diff>
     ```
    
-
+# Demo
+[https://jjtortosa.github.io/ngx-simple-text-diff/](https://jjtortosa.github.io/ngx-simple-text-diff/)
 
