@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-simple-text-diff": [
+        "dist/ngx-simple-text-diff/ngx-simple-text-diff",
+        "dist/ngx-simple-text-diff"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

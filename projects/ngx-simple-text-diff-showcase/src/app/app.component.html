@@ -1,0 +1,18 @@
+<h3>{{title}}</h3>
+<lib-ngx-simple-text-diff></lib-ngx-simple-text-diff>
+<table>
+  <tr>
+    <td>Text Version 1:</td>
+    <td>Text Version 2:</td>
+  </tr>
+  <tr>
+    <td>
+      <textarea>{{textV1}}</textarea>
+    </td>
+    <td>
+      <textarea>{{textV2}}</textarea>
+    </td>
+  </tr>
+</table>
+
+<lib-ngx-simple-text-diff [oldText]="textV1" [newText]="textV2"></lib-ngx-simple-text-diff>

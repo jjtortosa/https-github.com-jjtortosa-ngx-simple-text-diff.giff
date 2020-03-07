@@ -1,0 +1,18 @@
+{
+  "name": "ngx-simple-text-diff",
+  "version": "0.0.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjtortosa/ngx-simple-text-diff.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jjtortosa/ngx-simple-text-diff/issues"
+  },
+  "homepage": "https://github.com/jjtortosa/ngx-simple-text-diff",
+  "peerDependencies": {
+    "@angular/common": "^9.0.5",
+    "@angular/core": "^9.0.5",
+    "tslib": "^1.10.0",
+    "diff": "^4.0.2"
+  }
+}
