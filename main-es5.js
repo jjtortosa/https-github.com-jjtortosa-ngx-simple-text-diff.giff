@@ -70,8 +70,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       _createClass(NgxSimpleTextDiffComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
+        key: "ngOnChanges",
+        value: function ngOnChanges() {
           this.diff = Diff.diffWordsWithSpace(this.oldText.replace(/\n/, '↵\n'), this.newText.replace(/\n/, '↵\n'));
         }
       }]);
@@ -90,6 +90,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         oldText: "oldText",
         newText: "newText"
       },
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]()],
       decls: 1,
       vars: 1,
       consts: [[3, "ngClass", 4, "ngFor", "ngForOf"], [3, "ngClass"]],
@@ -267,6 +268,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _ngx_simple_text_diff_src_lib_ngx_simple_text_diff_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ../../../ngx-simple-text-diff/src/lib/ngx-simple-text-diff.component */
     "../ngx-simple-text-diff/src/lib/ngx-simple-text-diff.component.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "../../node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 
     var AppComponent = function AppComponent() {
       _classCallCheck(this, AppComponent);
@@ -283,9 +290,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: AppComponent,
       selectors: [["app-root"]],
-      decls: 17,
+      decls: 15,
       vars: 5,
-      consts: [[3, "oldText", "newText"]],
+      consts: [[3, "ngModel", "ngModelChange"], [3, "oldText", "newText"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h3");
@@ -318,29 +325,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "td");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "textarea");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "textarea", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "td");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "textarea");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function AppComponent_Template_textarea_ngModelChange_11_listener($event) {
+            return ctx.textV1 = $event;
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "td");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "textarea", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function AppComponent_Template_textarea_ngModelChange_13_listener($event) {
+            return ctx.textV2 = $event;
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "lib-ngx-simple-text-diff", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "lib-ngx-simple-text-diff", 1);
         }
 
         if (rf & 2) {
@@ -348,20 +359,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.title);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.textV1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.textV1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.textV2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.textV2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("oldText", ctx.textV1)("newText", ctx.textV2);
         }
       },
-      directives: [_ngx_simple_text_diff_src_lib_ngx_simple_text_diff_component__WEBPACK_IMPORTED_MODULE_1__["NgxSimpleTextDiffComponent"]],
+      directives: [_ngx_simple_text_diff_src_lib_ngx_simple_text_diff_component__WEBPACK_IMPORTED_MODULE_1__["NgxSimpleTextDiffComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"]],
       styles: ["table[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\ntextarea[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 140px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qdWFuam8vUGhwc3Rvcm1Qcm9qZWN0cy9fbGlicmFyaWVzL25neC1zaW1wbGUtdGV4dC1kaWZmL3Byb2plY3RzL25neC1zaW1wbGUtdGV4dC1kaWZmLXNob3djYXNlL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwicHJvamVjdHMvbmd4LXNpbXBsZS10ZXh0LWRpZmYtc2hvd2Nhc2Uvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0FDQ0Y7O0FERUE7RUFDRSxXQUFBO0VBQ0EsYUFBQTtBQ0NGIiwiZmlsZSI6InByb2plY3RzL25neC1zaW1wbGUtdGV4dC1kaWZmLXNob3djYXNlL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGV7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG50ZXh0YXJlYSB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDE0MHB4O1xufVxuIiwidGFibGUge1xuICB3aWR0aDogMTAwJTtcbn1cblxudGV4dGFyZWEge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxNDBweDtcbn0iXX0= */"]
     });
     /*@__PURE__*/
@@ -423,6 +434,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _ngx_simple_text_diff_src_lib_ngx_simple_text_diff_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../ngx-simple-text-diff/src/lib/ngx-simple-text-diff.module */
     "../ngx-simple-text-diff/src/lib/ngx-simple-text-diff.module.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/forms */
+    "../../node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -437,13 +454,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         return new (t || AppModule)();
       },
       providers: [],
-      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _ngx_simple_text_diff_src_lib_ngx_simple_text_diff_module__WEBPACK_IMPORTED_MODULE_3__["NgxSimpleTextDiffModule"]]]
+      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _ngx_simple_text_diff_src_lib_ngx_simple_text_diff_module__WEBPACK_IMPORTED_MODULE_3__["NgxSimpleTextDiffModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _ngx_simple_text_diff_src_lib_ngx_simple_text_diff_module__WEBPACK_IMPORTED_MODULE_3__["NgxSimpleTextDiffModule"]]
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _ngx_simple_text_diff_src_lib_ngx_simple_text_diff_module__WEBPACK_IMPORTED_MODULE_3__["NgxSimpleTextDiffModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]]
       });
     })();
     /*@__PURE__*/
@@ -454,7 +471,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _ngx_simple_text_diff_src_lib_ngx_simple_text_diff_module__WEBPACK_IMPORTED_MODULE_3__["NgxSimpleTextDiffModule"]],
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _ngx_simple_text_diff_src_lib_ngx_simple_text_diff_module__WEBPACK_IMPORTED_MODULE_3__["NgxSimpleTextDiffModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]],
           providers: [],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         }]
