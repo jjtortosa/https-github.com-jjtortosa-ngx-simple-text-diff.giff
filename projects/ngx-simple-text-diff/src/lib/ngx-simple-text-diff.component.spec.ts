@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NgxSimpleTextDiffComponent } from './ngx-simple-text-diff.component';
 
@@ -6,7 +6,7 @@ describe('NgxSimpleTextDiffComponent', () => {
   let component: NgxSimpleTextDiffComponent;
   let fixture: ComponentFixture<NgxSimpleTextDiffComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ NgxSimpleTextDiffComponent ]
     })

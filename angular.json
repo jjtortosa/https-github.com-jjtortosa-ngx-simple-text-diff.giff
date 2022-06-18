@@ -28,18 +28,6 @@
             "tsConfig": "projects/ngx-simple-text-diff/tsconfig.spec.json",
             "karmaConfig": "projects/ngx-simple-text-diff/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-simple-text-diff/tsconfig.lib.json",
-              "projects/ngx-simple-text-diff/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     },
@@ -62,7 +50,6 @@
             "main": "projects/ngx-simple-text-diff-showcase/src/main.ts",
             "polyfills": "projects/ngx-simple-text-diff-showcase/src/polyfills.ts",
             "tsConfig": "projects/ngx-simple-text-diff-showcase/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/ngx-simple-text-diff-showcase/src/favicon.ico",
               "projects/ngx-simple-text-diff-showcase/src/assets"
@@ -70,7 +57,13 @@
             "styles": [
               "projects/ngx-simple-text-diff-showcase/src/styles.scss"
             ],
-            "scripts": ["./node_modules/diff/dist/diff.min.js"]
+            "scripts": ["./node_modules/diff/dist/diff.min.js"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -83,7 +76,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -101,7 +93,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -137,19 +130,6 @@
             "scripts": ["./node_modules/diff/dist/diff.min.js"]
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-simple-text-diff-showcase/tsconfig.app.json",
-              "projects/ngx-simple-text-diff-showcase/tsconfig.spec.json",
-              "projects/ngx-simple-text-diff-showcase/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -163,6 +143,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngx-simple-text-diff"
+    }
+  }
 }
